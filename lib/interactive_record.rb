@@ -55,8 +55,10 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def find_by
-    
+  def self.find_by(hash)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys.first.to_s} = ?"
+    DB[:conn].execute(sql, hash.values.first)
+  
   end
   
   
