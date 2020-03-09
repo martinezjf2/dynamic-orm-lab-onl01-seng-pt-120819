@@ -59,8 +59,6 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys.first.to_s} = ?"
     DB[:conn].execute(sql, hash.values.first)
   
-    
-    
   end
   
   
